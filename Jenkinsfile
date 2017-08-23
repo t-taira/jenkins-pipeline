@@ -1,9 +1,21 @@
-node {
-    stage('メッセージを表示') {
-        sh 'echo Hello Pipeline.'
-    }
+pipeline {
+    agent any
 
-    stage('日付を表示') {
-        sh 'date'
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
